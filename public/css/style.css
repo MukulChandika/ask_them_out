@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: url('https://i.pinimg.com/originals/51/d5/28/51d5282f9c510d4f2ddc37d4c8842ed6.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#background-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://media.giphy.com/media/90snS7NNO9wcw/giphy.gif');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    z-index: -1;
+    animation: slideBg 20s linear infinite;
+}
+
+@keyframes slideBg {
+    from { background-position: 0 0; }
+    to { background-position: -400px 400px; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    border: 3px solid rgba(255, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.banner-gif {
+    margin: -20px 0 20px;
+}
+
+.banner-gif img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.banner-gif img:hover {
+    transform: scale(1.05);
+}
+
+#final-gif {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    color: #cc0000;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+#yes-button, #no-button {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#yes-button {
+    background: linear-gradient(45deg, #ff0000, #ff4d4d);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#yes-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+    background: linear-gradient(45deg, #ff1a1a, #ff6666);
+}
+
+#no-button {
+    background: linear-gradient(45deg, #cc0000, #ff1a1a);
+    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#no-button:hover {
+    background: linear-gradient(45deg, #b30000, #e60000);
+    transform: translateY(-3px) scale(0.95);
+}
+
+.message {
+    display: none;
+    animation: fadeIn 1s ease;
+}
+
+.message h2 {
+    color: #cc0000;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.language-selector {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.language-selector select {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid #ff0000;
+    font-size: 1rem;
+    outline: none;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-selector select:focus {
+    border-color: #cc0000;
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.2);
+}
+
+.language-selector label {
+    color: #cc0000;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.creator {
+    color: #cc0000;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .banner-gif img, #final-gif {
+        max-width: 250px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #yes-button, #no-button {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Add some heart animations in the background */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff69b4" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center center;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
